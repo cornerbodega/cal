@@ -15,7 +15,9 @@ function LoginService($location, ConnectService, $mdDialog, $rootScope, DynamicS
             action : "login"
         }
     }
-
+    function login() {
+        console.log('LETS LOG In!!');
+    }
     function execute(data) {
         console.log('execute!!');
         console.log(data);
@@ -84,6 +86,8 @@ function LoginService($location, ConnectService, $mdDialog, $rootScope, DynamicS
         model: model,
         f: f,
         s: s,
-        execute: execute
+        // execute: execute,
+        login: login,
+
     }
 }
