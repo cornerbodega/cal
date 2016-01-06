@@ -1,0 +1,145 @@
+.landing {
+    background-image: url('../img/landing.jpg');
+    background: #424242 ;
+}
+/* app css stylesheet */
+md-icon {
+  width: 50%;
+  height: 30%; }
+md-icon svg {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
+.s64 { font-size: 64px; }
+.s32 { font-size: 48px; }
+md-icon.fa {
+  display: block;
+  padding-left: 0;
+}
+md-icon.s32 span { padding-left: 8px; }
+md-grid-list { margin: 8px; }
+/* Inventory*/
+/*.view_inventory { background: #b9f6ca; }
+.inventory_adjust { background: #4AA747; }
+.inventory_destroy_schedule { background: #704E9F; }
+.waste_destroy_schedule { background: #80d8ff; }
+.waste_destroy { background: #35AED8; }
+.schedule_zeros_for_destruction { background: #E0540E; }
+.inventory_convert { background: #8c9eff; }
+.batch_inventory_adjust { background: #072172; }*/
+
+ /* Dashboard */
+.browse_manifests,.inventory_manifest, .rooms {
+  background: #9e9d24 ; }
+  /*darkgreen*/
+.plants,.browse_plants, .inventory_adjust, .inventory_transfer_outbound, .inventory_transfer_inbound, .vehicle_add, .plant_cure, .plant_modify, .plant_room_add, .plant_rooms {
+  background: #2e7d32 ; }
+.inventory, .view_inventory, .inventory_room_add, .inventory_rooms, .inventory_destroy_schedule, .vehicle_modify, .plant_waste_weigh, .plant_room_remove {
+  background: #1565c0; }
+.waste_destroy_schedule, .manifest_void, .plant_harvest, .market, .employee_add{
+  background: #689f38 ; }
+.qa_lab, .schedule_zeros_for_destruction, .inventory_destroy, .vehicle_remove,  .plant_destroy,  .employee_remove, .inventory_room_remove {
+  background: #d84315 ; }
+.vendors, .browse_vehicles, .vehicles, .schedule_zeros_for_destruction, .inventory_destroy_schedule, .plant_destroy_schedule  {
+    background: #f9a825  ; }
+.inventory_convert, .transfers_view_outbound,.employees, .browse_employees, .plant_move {
+    background: #3949ab  ; }
+ .batch_inventory_adjust, .employee_modify{
+  background: #0288d1; }
+.transfers_view_inbound, .inbound {
+  background: #1565c0; }
+.plant_new, .plant_convert_to_inventory, .outbound {
+    background: #9e9d24; }
+.manifests, .plant_yield_modify {
+    background: #64b5f6 ; }
+.plant_harvest_schedule, .location {
+    background: #00838f; }
+.sales, .tax_report {
+    background: #424242 ;
+}
+/*[scroll] {
+  position:fixed;
+  top:0;
+}*/
+
+.toptoolbar {
+    .background: #bf360c;
+}
+.bottomtoolbar {
+    .background: #bf360c;
+}
+md-grid-tile {
+  transition: all 300ms ease-out 50ms; }
+/*md-grid-tile md-icon {
+  padding-bottom: 32px; }*/
+.footercaptionbox {
+/*md-grid-tile md-grid-tile-footer {*/
+  background: rgba(0, 0, 0, 0.2);
+  height: 25px;
+  width: 100%; }
+.inventoryfootercaptionbox {
+/*md-grid-tile md-grid-tile-footer {*/
+    background: rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: 100%; }
+md-grid-tile-footer figcaption{
+  width: 100%; }
+/*md-grid-tile-footer figcaption h3{*/
+.footercaption h3 {
+  margin: 0;
+  font-weight: 700;
+  width: 100%;
+  text-align: center; }
+
+.angular-google-map-container { height: 300px; width:100%}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.chart {
+    background: #eee;
+    padding: 3px;
+}
+
+.chart div {
+  width: 0;
+  transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 5px;
+  color: white;
+  box-shadow: 2px 2px 2px #666;
+}

@@ -1,0 +1,12 @@
+logs/*
+!.gitkeep
+node_modules/*
+node_modules/karma*
+node_modules/protractor*
+node_modules/protractor*
+node_modules/gulp*
+node_modules/jasmine*
+node_modules/bower*
+tmp
+.DS_Store
+.idea

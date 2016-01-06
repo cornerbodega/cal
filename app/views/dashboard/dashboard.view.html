@@ -1,0 +1,11 @@
+<div layout="col">
+    <div><my-menu-bar /></div>
+    <!-- <div class="container"> -->
+    <div class="md-padding">
+        <form ng-submit="vm.onsubmit($event)" name="vm.inputform" novalidate>
+            <formly-form model="vm.formmodel" fields="vm.formfields" options="vm.formoptions" form="vm.inputform">
+            </formly-form>
+        </form>
+    </div>
+</div>
+<pre ng-if="vm.formmodel">{{vm.formmodel | json}}</pre>

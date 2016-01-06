@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js" style="height:100%"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>potnet.net</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
+  <!-- Angular Material  -->
+  <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css"> -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap Select -->
+  <!-- <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css"> -->
+  <!-- Select2 theme  Bower Broken -->
+  <link rel="stylesheet" href="bower_components/select2/select2.css">
+
+  <!-- <link rel="stylesheet" href="bower_components/select2/dist/css/select2.css">
+  <link rel="stylesheet" href="bower_components/select2-bootstrap/select2-bootstrap.css"> -->
+  <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css"> -->
+  <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css"> -->
+
+  <link rel="stylesheet" href="bower_components/myselect2/select2-bootstrap.css">
+  <!-- <link rel="stylesheet" href="http://fk.github.io/select2-bootstrap-css/css/select2-bootstrap.css"> -->
+  <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">     -->
+  <!-- angular-ui-select -->
+  <link rel="stylesheet" href="bower_components/ui-select/dist/select.min.css">
+
+  <!-- eonasdan-bootstrap-datetimepicker -->
+  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+                                <!-- "bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" -->
+
+  <!-- D3.js -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
+
+  <!-- weird datetimepicker -->
+  <!-- <link href="https://cdn.rawgit.com/zhaber/datetimepicker/master/datetimepicker.css" type="text/css" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css"> -->
+
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="bower_components/sc-date-time/dist/sc-date-time.css"> -->
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="bower_components/sc-date-time/dist/sc-date-time.css"> -->
+<!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+  <!-- ng-table css -->
+  <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css">
+
+  <!--Let browser know website is optimized for mobile-->
+
+  <link rel="apple-touch-icon" href="img/potlogo.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="height:100%">
+  <!-- <ul class="menu">
+    <li><a href="#/view1">WSLCB Traceability</a></li>
+    <li><a href="#/view2">I502 Community Marketplace</a></li>
+  </ul> -->
+
+  <!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <!-- <div>Angular seed app: v<span app-version></span></div> -->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<!--  jquery -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+
+<script src="bower_components/angular/angular.js"></script>
+
+<!-- Animate -->
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+
+<!-- Directives -->
+<script src="directives/my.directive.js"></script>
+
+<!-- Controllers -->
+<script src="controllers/login.controller.js"></script>
+<script src="controllers/dashboard.controller.js"></script>
+<script src="controllers/generic.form.controller.js"></script>
+<script src="controllers/vendors/VendorsController.js"></script>
+<script src="controllers/tasks.controller.js"></script>
+<script src="controllers/inventory/view_inventory.controller.js"></script>
+<script src="controllers/manifests/view_manifests.controller.js"></script>
+<script src="controllers/manifests/transfer_manifest.controller.js"></script>
+<!-- <script src="controllers/plants/browse_plants_controller.js"></script> -->
+<script src="controllers/print.controller.js"></script>
+<script src="controllers/history/HistoryController.js"></script>
+<script src="controllers/Help/HelpController.js"></script>
+<script src="controllers/qa_lab/QALabController.js"></script>
+<script src="controllers/Market/MarketController.js"></script>
+<!-- <script src="controllers/Demo/LandingController.js"></script> -->
+
+
+
+<!-- Services -->
+<script src="services/login.service.js"></script>
+<script src="services/connect.service.js"></script>
+<script src="services/dashboard.service.js"></script>
+<script src="services/generic.form.service.js"></script>
+<script src="services/task.service.js"></script>
+<script src="services/form.data.service.js"></script>
+<script src="services/field.data.service.js"></script>
+<!-- <script src="services/confirmation.service.js"></script> -->
+<script src="services/dynamic.static.data.service.js"></script>
+<!-- <script src="services/side.nav.service.js"></script> -->
+<script src="services/vendors.service.js"></script>
+<script src="assets/json/vendors.coords.js"></script>
+<script src="services/call.lcb.api.service.js"></script>
+<script src="services/response.formatter.js"></script>
+<script src="assets/json/licensee.info.service.js"></script>
+<script src="services/request.formatter.js"></script>
+<script src="services/Data.js"></script>
+<!-- <script src="services/DataFormatter.js"></script> -->
+<script src="services/History/History.js"></script>
+<script src="services/Titler/Titler.js"></script>
+<script src="services/Market/Market.js"></script>
+<script src="services/Help.js"></script>
+<script src="services/Demo.js"></script>
+
+
+
+<!-- Mongodb -->
+<!-- <script src="php/server.php"></script> -->
+<!-- <script src="broweserify/bundle.js"></script> -->
+
+<!-- Weird stuff I don't know about -->
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+
+<!-- Angular Material -->
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-aria.min.js"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script> -->
+<!-- Angular Material Javascript now available via Google CDN; version 0.10 used here -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script> -->
+
+<!-- anguar-ui-select -->
+<script src="bower_components/ui-select/dist/select.min.js"></script>
+
+<!-- Formly -->
+<!-- Twitter bootstrap -->
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
+<script src="bower_components/api-check/dist/api-check.min.js"></script>
+<script src="bower_components/angular-formly/dist/formly.min.js"></script>
+<script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.min.js"></script>
+
+<!-- bootstrap-select -->
+<!-- <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script> -->
+
+<!-- ng-sanitize -->
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+<!-- Loading Bar -->
+<link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='bower_components/angular-loading-bar/build/loading-bar.min.js'></script>
+
+<!-- JSON to Table -->
+<!-- <script type='text/javascript' src='bower_components/json-to-table/json-to-table.js'></script> -->
+
+<!-- ng-table -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.8.3/ng-table.min.css"> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.8.3/ng-table.min.js"></script> -->
+
+<!-- jsBarcode -->
+<script src="bower_components/JsBarcode/JsBarcode.js"></script>
+<script src="bower_components/JsBarcode/CODE128.js"></script>
+
+<!-- Angular Bootstrap -->
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<!-- angular-bootstrap-datetimepicker -->
+<!-- <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script> -->
+
+<!-- SC Date Time -->
+<!-- <script type="text/javascript" src="bower_components/sc-date-time/dist/sc-date-time.js"></script> -->
+
+<!-- Moment -->
+<script src="bower_components/moment/min/moment.min.js"></script>
+
+<!-- eonasdan-bootstrap-datetimepicker -->
+<script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- RZSlider -->
+<script src="bower_components/angularjs-slider/dist/rzslider.min.js"></script>
+<link rel='stylesheet' href='bower_components/angularjs-slider/dist/rzslider.min.css' type='text/css' />
+
+<!-- Google Maps -->
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
+
+<!-- Smart Table -->
+<!-- <script src="bower_components/angular-smart-table/dist/smart-table.min.js"></script> -->
+
+<!-- lumx  -->
+<script src="bower_components/lumx/dist/lumx.js"></script>
+<!-- <script src="bower_components/velocity/velocity.js"></script> -->
+
+<!-- Materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+<!-- Combodate -->
+<!-- <script src="bower_components/combodate/src/combodate.js"></script> -->
+
+<!-- ng-table -->
+<script src="bower_components/ng-table/dist/ng-table.min.js"></script>
+
+<!-- Parse  -->
+<!-- <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script> -->
+
+<!-- <script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"> -->
+
+<!-- JSON to CSV -->
+<!-- <script type="text/javascript" src="bower_components/JSONtoCSV/JSONtoCSV.js"></script> -->
+
+<!-- <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js"></script> -->
+<!-- <script src="https://cdn.rawgit.com/zhaber/datetimepicker/master/datetimepicker.js"></script> -->
+<!-- <script src="bower_components/angular-ui-bootstrap-datetimepicker/datetimepicker.js"></script>
+<link rel="bower_components/angular-ui-bootstrap-datetimepicker/datetimepicker.css"> -->
+
+<!-- Dynatable -->
+<!-- <link rel="stylesheet" href="bower_components/dynatable/jquery.dynatable.css"> -->
+<!-- <script type='text/javascript' src='bower_components/dynatable/jquery.dynatable.js'></script> -->
+
+<!-- apiCheck is used by formly to validate its api -->
+<!-- <script src="//rawgit.com/kentcdodds/api-check/latest/dist/api-check.js"></script> -->
+<!-- This is the current state of master for formly core. -->
+<!-- <script src="//rawgit.com/formly-js/angular-formly/latest/dist/formly.js"></script> -->
+<!-- This is the current state of master for the bootstrap templates -->
+<!-- <script src="//rawgit.com/formly-js/angular-formly-templates-bootstrap/latest/dist/angular-formly-templates-bootstrap.js"></script> -->
+
+
+
+</body>
+</html>
