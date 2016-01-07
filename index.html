@@ -13,14 +13,19 @@
         // $http.post('/proxy', {API:'4.0',action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'}).success(function(res){
         //     console.log(res);
         // })
-        request({
-            url: '/proxy',
-            method: "POST",
-            json: true,
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify( {API:'4.0',action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'})
+        $http({
+            method: 'POST',
+            // url: 'php/action.php',
+            url: 'http://potnet.net/app/php/potnetdb.php',
+            data: { user: JSON.parse({email: '', ubi: ''}), request: sync_check_request },
+            // data: data,
+            datatype: 'json',
+        }).success(function (res) {
+            console.log(res);
+            // console.log('success!');
+            // update_brs_pos()
+
+            // console.log(res);
         })
         $scope.bananas = 12
     });
