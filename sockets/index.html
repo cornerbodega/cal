@@ -25,6 +25,7 @@
     </form>
     <script>
     var socket = io();
+    console.log('script loaded');
     $('form').submit(function(){
         console.log('WOW!!!');
         socket.emit('chat message', $('#m').val());
