@@ -3,7 +3,7 @@ var proxy = require('express-http-proxy');
 var app = express();
 var http = require('http')
 var port = process.env.PORT || 8080;
-var wslcb_server = 'https://wslcb.mjtraceability.com'
+var wslcb_server = 'https://wslcb.mjtraceability.com/serverjson.asp'
 var querystring = require('querystring');
 
 var login_req = {
@@ -39,7 +39,7 @@ function PostCode(codestring) {
   // An object of options to indicate where to post to
   var post_options = {
       host: wslcb_server,
-      path: '/serverjson.asp',
+      path: '/',
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
