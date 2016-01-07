@@ -7,7 +7,7 @@
       var countryApp = angular.module('countryApp', []);
       countryApp.controller('CountryCtrl', function ($scope, $http){
         $http.get('/testpath').success(function(data) {
-          $scope.countries = JSON.parse(data);
+          $scope.countries = data;
         });
         $scope.bananas = 12
       });

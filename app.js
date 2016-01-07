@@ -9,8 +9,8 @@ app.get('/testpath', function (req, res, next) {
       { name:'Greece', population:'10'},
       { name: 'Egypt', population:'12'}
   ]
-  console.log(j);
-  // res.send(j);
+  // console.log(j);
+  res.send(j);
 });
 app.get('*', function (req, res, next) {
   res.sendFile('/var/www/potnet.net/index.html')
