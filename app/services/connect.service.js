@@ -99,29 +99,30 @@
             }
 
             data["API"] = "4.0";
+            console.log({ user: JSON.parse(sessionStorage.user), request: data });
             // console.log('request:');
             // console.log(JSON.stringify(data));
             // console.log({ user: JSON.parse(sessionStorage.user), request: data });
-            $http({
-                method: 'POST',
-                // url: 'php/action.php',
-                url: 'php/potnetpost.php',
-                data: { user: JSON.parse(sessionStorage.user), request: data },
-                // data: data,
-                datatype: 'json',
-            }).success(function (res) {
-                if (res.success == 1) {
-                    sCallback(res);
-                    console.log('response:');
-                    console.log(res);
-                    // send a sync_check request and get all that data
-                    // into brs_pos!
-                    // WORKS - SAVE POS INFO TO MYSQL DB
-                } else {
-                    fCallback(res);
-                };
-            });
-        }
+        //     $http({
+        //         method: 'POST',
+        //         // url: 'php/action.php',
+        //         url: 'php/potnetpost.php',
+        //         data: { user: JSON.parse(sessionStorage.user), request: data },
+        //         // data: data,
+        //         datatype: 'json',
+        //     }).success(function (res) {
+        //         if (res.success == 1) {
+        //             sCallback(res);
+        //             console.log('response:');
+        //             console.log(res);
+        //             // send a sync_check request and get all that data
+        //             // into brs_pos!
+        //             // WORKS - SAVE POS INFO TO MYSQL DB
+        //         } else {
+        //             fCallback(res);
+        //         };
+        //     });
+        // }
         // function saveForDemo(formatted) {
         //     console.log(JSON.stringify(formatted));
         //     $http({
