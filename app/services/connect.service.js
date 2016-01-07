@@ -28,20 +28,20 @@
         function getFromBrsPos(sync_check_request) {
 
 
-            return $http({
-                method: 'POST',
-                // url: 'php/action.php',
-                url: 'http://potnet.net/app/php/get_from_brs_pos.php',
-                data: { user: JSON.parse(sessionStorage.user), request: sync_check_request },
-                // data: data,
-                datatype: 'json',
-            }).success(function (res) {
-                // console.log(res);
-                console.log('got items from brs_pos');
-                // update_brs_pos()
-
-                console.log(res);
-            })
+            // return $http({
+            //     method: 'POST',
+            //     // url: 'php/action.php',
+            //     url: 'http://potnet.net/app/php/get_from_brs_pos.php',
+            //     data: { user: JSON.parse(sessionStorage.user), request: sync_check_request },
+            //     // data: data,
+            //     datatype: 'json',
+            // }).success(function (res) {
+            //     // console.log(res);
+            //     console.log('got items from brs_pos');
+            //     // update_brs_pos()
+            //
+            //     console.log(res);
+            // })
         }
         function updateBrsPos() {
             tables_to_sync = [
@@ -75,18 +75,18 @@
                 sync_check_request.data.push({table: table, active: 1})
             })
 
-            $http({
-                method: 'POST',
-                // url: 'php/action.php',
-                url: 'http://potnet.net/app/php/update_brs_pos.php',
-                data: { user: JSON.parse(sessionStorage.user), request: sync_check_request },
-                // data: data,
-                datatype: 'json',
-            }).success(function (res) {
-                // console.log(res);
-                console.log('brs_pos updated successfully!');
-                Data.loaded = true;
-            })
+            // $http({
+            //     method: 'POST',
+            //     // url: 'php/action.php',
+            //     url: 'http://potnet.net/app/php/update_brs_pos.php',
+            //     data: { user: JSON.parse(sessionStorage.user), request: sync_check_request },
+            //     // data: data,
+            //     datatype: 'json',
+            // }).success(function (res) {
+            //     // console.log(res);
+            //     console.log('brs_pos updated successfully!');
+            //     Data.loaded = true;
+            // })
         }
         function post(data, fCallback, sCallback) {
             if (typeof sessionStorage.sessionid == 'undefined') {
@@ -105,7 +105,7 @@
             $http({
                 method: 'POST',
                 // url: 'php/action.php',
-                url: 'http://potnet.net/app/php/',
+                url: 'php/potnetpost.php',
                 data: { user: JSON.parse(sessionStorage.user), request: data },
                 // data: data,
                 datatype: 'json',
