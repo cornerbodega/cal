@@ -11,7 +11,7 @@ var wslcb_server = 'https://wslcb.mjtraceability.com/serverjson.asp'
 // }));
 app.post('/login', function (req, res, next) {
   // res.sendFile('/var/www/potnet.net/index.html')
-  console.log(req);
+  // console.log(req);
   http.post(wslcb_server, req).success(function(res){console.log(res);})
   // res.send(j);
 });
