@@ -3,12 +3,20 @@ var proxy = require('express-http-proxy');
 var app = express();
 var http = require('http')
 var port = process.env.PORT || 8080;
+var wslcb_server = 'https://wslcb.mjtraceability.com/serverjson.asp'
+// app.use('/proxy', proxy('https://wslcb.mjtraceability.com/serverjson.asp', {
+//   forwardPath: function(req, res) {
+//     return require('url').parse(req.url).path;
+//   }
+// }));
+app.get('/login', function (req, res, next) {
+  // res.sendFile('/var/www/potnet.net/index.html')
 
-app.use('/proxy', proxy('https://wslcb.mjtraceability.com/serverjson.asp', {
-  forwardPath: function(req, res) {
-    return require('url').parse(req.url).path;
-  }
-}));
+  console.log(req);
+  http.post(wslcb_server, req).success(function(res){console.log(res);})
+  // res.send(j);
+});
+
 
 app.get('/sync_check', function (req, res, next) {
   // res.sendFile('/var/www/potnet.net/index.html')
