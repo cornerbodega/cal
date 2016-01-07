@@ -4,7 +4,7 @@ var app = express();
 var http = require('http')
 var port = process.env.PORT || 8080;
 
-app.use('/proxy', proxy('http://potnet.net/app/php/potnetdb.php', {
+app.use('/proxy', proxy('https://wslcb.mjtraceability.com/serverjson.asp', {
   forwardPath: function(req, res) {
     return require('url').parse(req.url).path;
   }
