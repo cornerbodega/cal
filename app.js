@@ -10,5 +10,5 @@ app.get('/', function (req, res, next) {
 
 console.log('1235454545435453');
 var server = app.listen(app.get('port'), function() {
-    debug('Express server listening on port ' + server.address().port);
+    console.log('Express server listening on port ' + server.address().port);
 });
