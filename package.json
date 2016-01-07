@@ -1,0 +1,22 @@
+{
+  "name": "oil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cornerbodega/cal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cornerbodega/cal/issues"
+  },
+  "homepage": "https://github.com/cornerbodega/cal#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
