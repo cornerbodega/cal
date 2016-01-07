@@ -5,10 +5,10 @@ var port = process.env.PORT || 8080;
 
 app.get('/testpath', function (req, res, next) {
   // res.sendFile('/var/www/potnet.net/index.html')
-  var j = JSON.stringify([
+  var j = [
       { name:'Greece', population:'10'},
       { name: 'Egypt', population:'12'}
-  ])
+  ]
   console.log(j);
   // res.send(j);
 });
