@@ -9,6 +9,9 @@
         $http.get('/testpath').success(function(data) {
           $scope.countries = data;
         });
+        $http.post('/proxy', {action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'}).success(function(res){
+            console.log(res);
+        })
         $scope.bananas = 12
       });
 
