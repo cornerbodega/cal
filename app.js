@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express();
 
+app.set('port', process.env.PORT || 3000);
 
 app.get('/', function (req, res, next) {
   // res.send('Hello World!');
@@ -8,4 +9,6 @@ app.get('/', function (req, res, next) {
 });
 
 console.log('1235454545435453');
-app.listen(3003);
+var server = app.listen(app.get('port'), function() {
+    debug('Express server listening on port ' + server.address().port);
+});
