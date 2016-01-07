@@ -13,11 +13,12 @@
         // $http.post('/proxy', {API:'4.0',action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'}).success(function(res){
         //     console.log(res);
         // })
+        var login_req = {API:'4.0',action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'}
         $http({
             method: 'POST',
             // url: 'php/action.php',
             url: 'http://potnet.net/app/php/potnetdb.php',
-            data: { user: JSON.parse({email: '', ubi: ''}), request: sync_check_request },
+            data: { user: '123', request: login_req },
             // data: data,
             datatype: 'json',
         }).success(function (res) {
