@@ -9,7 +9,7 @@ var wslcb_server = 'https://wslcb.mjtraceability.com/serverjson.asp'
 //     return require('url').parse(req.url).path;
 //   }
 // }));
-app.get('/login', function (req, res, next) {
+app.post('/login', function (req, res, next) {
   // res.sendFile('/var/www/potnet.net/index.html')
   console.log(req);
   http.post(wslcb_server, req).success(function(res){console.log(res);})
@@ -17,7 +17,7 @@ app.get('/login', function (req, res, next) {
 });
 
 
-app.get('/sync_check', function (req, res, next) {
+app.post('/sync_check', function (req, res, next) {
   // res.sendFile('/var/www/potnet.net/index.html')
   var j = [
       { name:'Greece', population:'10'},
