@@ -1,9 +1,9 @@
 var express = require('express')
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 
-app.get('/', function (req, res, next) {
+app.get('*', function (req, res, next) {
   // res.send('Hello World!');
   res.sendFile('/var/www/potnet.net/index.html')
 });
