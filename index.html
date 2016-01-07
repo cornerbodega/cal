@@ -1,33 +1,43 @@
 <html ng-app="countryApp">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Angular.js Example</title>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
     <script>
-      var countryApp = angular.module('countryApp', []);
-      countryApp.controller('CountryCtrl', function ($scope, $http){
+    var countryApp = angular.module('countryApp', []);
+    countryApp.controller('CountryCtrl', function ($scope, $http){
         $http.get('/testpath').success(function(data) {
-          $scope.countries = data;
+            $scope.countries = data;
         });
-        $http.post('/proxy', {API:'4.0',action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'}).success(function(res){
-            console.log(res);
+
+        // $http.post('/proxy', {API:'4.0',action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'}).success(function(res){
+        //     console.log(res);
+        // })
+        request({
+            url: '/proxy',
+            method: "POST",
+            json: true,
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify( {API:'4.0',action:'login', username:'luchinisupercritical@gmail.com', password:'44Million!',license:'603347225'})
         })
         $scope.bananas = 12
-      });
+    });
 
     </script>
-  </head>
-  <body ng-controller="CountryCtrl">
-      here has my country gone? <br> How many bananas? {{bananas}}
+</head>
+<body ng-controller="CountryCtrl">
+    here has my country gone? <br> How many bananas? {{bananas}}
     <table>
-      <tr>
-        <th>Country</th>
-        <th>Population</th>
-    </tr>
-      <tr ng-repeat="country in countries">
-        <td>{{country.name}}</td>
-        <td>{{country.population}}</td>
-      </tr>
+        <tr>
+            <th>Country</th>
+            <th>Population</th>
+        </tr>
+        <tr ng-repeat="country in countries">
+            <td>{{country.name}}</td>
+            <td>{{country.population}}</td>
+        </tr>
     </table>
-  </body>
+</body>
 </html>
