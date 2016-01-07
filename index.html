@@ -9,15 +9,17 @@
         $http.get('/testpath').success(function(data) {
           $scope.countries = data;
         });
+        $scope.bananas = 12
       });
     </script>
   </head>
   <body ng-controller="CountryCtrl">
+      here has my country gone? <br> How many bananas? {{bananas}}
     <table>
       <tr>
         <th>Country</th>
         <th>Population</th>
-      </tr> Where has my country gone?
+    </tr> W
       <tr ng-repeat="country in countries">
         <td>{{country.name}}</td>
         <td>{{country.population}}</td>
