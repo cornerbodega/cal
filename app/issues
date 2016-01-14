@@ -1,0 +1,77 @@
+12-30-15
+
+<<<<<<<<<<<PLATE>>>>>>>>>>>
+[todo] Marketplace is just a message board..... mysql and chill. 
+[todo] make sure app can handle new user case where there's nothing in brs_pos for a ubi...
+[todo] Use brs_pos to store the last sync_check request. Load that first. In the background, make a request to update brs_pos. Update the client info on success by changing the values in the Data service.
+[todo] inventory_transfer_outbound_return_lookup, inventory_transfer_outbound_return - very important!!
+
+[todo] https://material.angularjs.org/latest/demo/toast success - have a button for view(action, res) which will take the user to the view form with details set on whatever item was created. this will be good to code! it's an opportunity for me to test that the responses are coming back as expected.
+
+
+
+
+[todo] Required fields
+ <<<<<<<<<<<NICE-TO-HAVE>>>>>>>>>>>
+ [todo] Download .xls, .json buttons
+ [todo] Phone numbers for qa labs - just google them
+ [todo] Make it clear that everything is in g
+ [BUG] Manifest total rounds to INT!!
+ [todo] License type-specific navigation
+ [todo] Reorganize nav
+ [todo] What functions do retailers need?!
+ [todo] Tax repot
+
+[todo] Remove ConnectService call in Response Formatter for QA results for inventory. Use sync_check data instead!
+[todo] Figure out what to do about the menu/nav bar...
+[todo] Rename employees "Transporters" to differentiate more clearly from "Traceability Users"
+[todo] Where do I show Action history (minus login)
+    Probably add a box to the Dashboard... todo is to do it.
+
+[todo] Figure out a better way to show Success. How can I SHOW that a function was successful?
+
+[todo] use trans sums for subsequent requests! this should hopefully speed things up considerably. Loading bar is distracting/ hokey
+
+[todo] Wtf is nonce? How do I use it? What is it good for? Do I want it?
+
+<<<<<<<<<<<TESTING>>>>>>>>>>>
+[todo-soon] Create a checklist of implemented functions
+[todo-later] Come up with a way to perform unit tests.
+[todo-later] Come up with a way to perform end-to-end tests.
+[todo] How do I track how the app is being used? What can I measure with code? Can the app make itself better?
+
+<<<<<<<<<<<SECURITY>>>>>>>>>>>
+[todo] Form sanitization/validation
+
+<<<<<<<<<<<DONE>>>>>>>>>>>
+[done] get off hostgator. can't have my damn ssh not working randomly. need a better service than that. Do some research           here.
+
+[done] show request and response history
+    [BIG DEAL] History Database is corrupted. Apparently I've hit the max characters in my inventory->json string strategy. woops. need to clear history table out and parse request json-> save to mysql db-> response json on the server server
+
+[done] make fields refresh themselves when they are loaded. otherwise the app is not dynamic and feels slow.
+        don't make a bunch of unnecessary queries. load the data once, but then have the fields actually display it.
+        doing the JSON.parse(localStorage.getItem()) is working, but it has the disadvantage of not caring when ResponseFormatter finishes.
+        Solution - use a factory/injected class to hold data/state, still need to figure out how to update without refreshing
+
+[done] What about inbound manifests/transfers!? How do they get viewed/accepted/rejected? Big big big deal!
+[done] inventory_transfer
+[done] Learn promises to solve [no-data-bug]
+[solved no-data-bug] If I click through really fast, localStorage does not get updated...
+        This is a big issue. It doesn't happen every time, but I have been able to replicate it. This is the kind of bug that will make people say the app sucks.
+        The solution is a loading screen/modal that waits until sync_check has returned to show the app.
+        MOST DISTURBING -- when I update localStorage, I don't get my $scope variables updated. This may be a good use of $rootScope. Is there a way to get the persistent benefits of localStorage (data saved on reload, regardless of state within app) and $rootScope (automatic data updates without reload)?
+
+[done] Implement inventory_manifest
+    [done 12-21-15] Implement all Vehicles (data, functions)
+    [done 12-21-15] Implement all Employees (data, functions)
+
+[done 12-20-15 BUG] If you're already logged in and go back to /login and don't enter correct information, you can still get into the app. I think this is because you still have a session id. One solution may be to reset session.sessionid when you land on /login. That way logout will just have to point you to /login.
+
+[done 12-20-15] Fix Delete! Just only show me scheduled stuff. Would be cool if there was a concept of This one is ready, this one has X hours left before it's ready. If it hasn't been scheduled it's not on the list.
+
+[done 12-20-15] Implement smart inventory_convert form. Don't ask me to enter usable_weight for
+weighable items!
+
+[done] Change the way requests are formatted for submission. Instead of altering vm.formmodel in GenericFormService.
+    RequestFormatter.<function>(vm.formmodel)
