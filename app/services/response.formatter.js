@@ -8,7 +8,7 @@
 function ResponseFormatter($rootScope, ConnectService, VendorsCoords, LicenseeInfoService, Data ) {
     function format() {
         console.log(Data)
-        
+
         Data.formatted = {}
 
         Data.formatted.inventory = formatInventory(Data.raw.inventory)
@@ -288,35 +288,45 @@ function ResponseFormatter($rootScope, ConnectService, VendorsCoords, LicenseeIn
     }
 
     function formatVendors (v) {
-        var vendors = {vendorsbyid:{}, vendorsarray:[], vendorsbyubi: {}}
-
+        var vendors = { vendorsbyid:{}, vendorsarray:[], vendorsbyubi: {} }
+        var numProPros = 0
+        var numRetailers = 0
         v.map( function (vendor) {
             // console.log(vendor.location);
             if (vendor.locationtype === 1) {
                 vendor.type = 'Tier 1 Producer'
+                numProPros ++
             }
             if (vendor.locationtype === 2) {
                 vendor.type = 'Tier 2 Producer'
+                numProPros ++
             }
             if (vendor.locationtype === 3) {
                 vendor.type = 'Tier 3 Producer'
+                numProPros ++
             }
             if (vendor.locationtype === 4) {
                 vendor.type = 'Tier 1 Producer/Processor'
+                numProPros ++
             }
             if (vendor.locationtype === 5) {
                 vendor.type = 'Tier 2 Producer/Processor'
+                numProPros ++
             }
             if (vendor.locationtype === 6) {
                 vendor.type = 'Tier 3 Producer/Processor'
+                numProPros ++
             }
             if (vendor.locationtype === 7) {
                 vendor.type = 'Processor'
+                numProPros ++
             }
             if (vendor.locationtype === 8) {
                 vendor.type = 'Retailer'
+                numRetailers ++
             }
-
+            // console.log('VENDORS NUMBERS');
+            // console.log('propro: ' + numProPros + ' Retailers: ' + numRetailers);
             // vendor.display = {}
             vendor.addresslabel = vendor.address1
             if (!!vendor.address2) vendor.addresslabel += ' ' + vendor.address2
@@ -340,6 +350,7 @@ function ResponseFormatter($rootScope, ConnectService, VendorsCoords, LicenseeIn
 
             vendors.vendorsarray.push(vendor)
             vendors.vendorsbyubi[vendor.ubi] = vendor
+
 
         });
         if (!Data.demo) Data.mylocation = vendors.vendorsbyubi[JSON.parse(sessionStorage.user).ubi].location;

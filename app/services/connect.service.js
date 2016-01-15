@@ -7,6 +7,16 @@
     ]);
 
     function ConnectService($http, $location, Data) {
+        function loadLicenses() {
+            $http({
+                method: 'GET',
+                url: 'potnetApi/licenses',
+                datatype: 'json',
+            }).success(function (res) {
+                console.log('Load Licenses!!');
+                console.log(res);
+            });
+        }
         function getDemoData(cb) {
             console.log('Getting Demo Data');
             // console.log(JSON.stringify(getSyncCheckRequest()));
@@ -161,6 +171,7 @@
         return {
             fail: fail,
             // potnetpost: potnetpost,
+            loadLicenses: loadLicenses,
             updateBrsPos: updateBrsPos,
             getFromBrsPos: getFromBrsPos,
             getDemoData: getDemoData,

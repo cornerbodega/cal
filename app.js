@@ -40,6 +40,26 @@ app.post('/potnetApi/postWrapper', function(req, res) {
     });
 })
 
+// default to this list
+// try today in 011216 mmddyy format
+// work backwards 30 days until you find a file
+// http://www.liq.wa.gov/publications/Public_Records/2016%20MJ%20Applicants/MarijuanaApplicants011216.xls
+// get the xls file, save it to a database
+app.get('/potnetApi/licenses', function(req, res) {
+  // response.render('index.html')
+  // res.send('Licenses!')
+  request({
+      url: "http://www.liq.wa.gov/publications/Public_Records/2016%20MJ%20Applicants/MarijuanaApplicants011216.xls",
+      method: "GET",
+      json: true,   // <--Very important!!!
+  }, function (error, response, body){
+    //   res.send(body);
+        console.log(body);
+  });
+
+});
+
+
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);

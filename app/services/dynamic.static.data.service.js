@@ -50,7 +50,7 @@ function DynamicStaticDataService(ConnectService, ResponseFormatter, $q, Data) {
         // console.log('PROMISE REFRESHED');
     }
     function syncCheckCallback(res) {
-        
+
         console.log(res);
         Data.raw= {}
         tables_to_sync.map(function(table){
@@ -94,6 +94,7 @@ function DynamicStaticDataService(ConnectService, ResponseFormatter, $q, Data) {
     function refresh(tablestosync) {
         // tables_to_sync = tablestosync
         // console.log(Data.tablesum);
+        ConnectService.loadLicenses()
         sync_check_request.data = []
         tables_to_sync.map( function( table ) {
             if (!Data.tablesum[table]){ var mysum = 0 }
