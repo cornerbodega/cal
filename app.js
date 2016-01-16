@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 
-// Configuration
+// Confi  guration
 
 // app.use(express.static(__dirname + '/public'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
@@ -39,6 +39,29 @@ app.post('/potnetApi/postWrapper', function(req, res) {
     }, function (error, response, body){
         res.send(body);
     });
+})
+
+app.post('/potnetApi/signIn', function(req, res) {
+    console.log(req.body);
+    // check provided information against what's in mongodb
+    // if it matches, respond with {success:1} else {success:0}
+})
+
+app.post('/potnetApi/signUp', function(req, res) {
+    console.log(req.body);
+    // check username/ubi to make sure it's not in the db
+    // try to log in to wslcb with provided info
+    // if error, return it
+    // if success, return it
+    // profit
+    // request({
+    //     url: "https://wslcb.mjtraceability.com/serverjson.asp",
+    //     method: "POST",
+    //     json: true,   // <--Very important!!!
+    //     body: req.body
+    // }, function (error, response, body){
+    //     res.send(body);
+    // });
 })
 
 // default to this list
