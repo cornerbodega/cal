@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "cheerio": "^0.19.0",
     "ejs": "~0.8.4",
-    "express": "~3.0.0"
+    "express": "^3.0.6",
+    "xlsx": "^0.8.0"
   },
   "devDependencies": {
     "connect-livereload": "~0.2.0",

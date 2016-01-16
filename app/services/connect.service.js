@@ -7,30 +7,60 @@
     ]);
 
     function ConnectService($http, $location, Data) {
-        function loadLicenses() {
-            $http({
-                method: 'GET',
-                url: 'potnetApi/licenses',
+        function signIn(req, f, s){
+            console.log(req);
+
+            return $http({
+                method: 'POST',
+                // url: 'php/action.php',
+                url: 'potnetApi/signIn',
+                data: req,
                 datatype: 'json',
             }).success(function (res) {
-                console.log('Load Licenses!!');
+                // if account found and password correct,
+                // try to log in to wslcb with ubi from db(f, s)
+                // respond/die if no ubi (no account) or bad info (unable to log in to wslcb)
+                // s(), else, f()
                 console.log(res);
-            });
+            })
         }
-        function getDemoData(cb) {
-            console.log('Getting Demo Data');
-            // console.log(JSON.stringify(getSyncCheckRequest()));
-            // $http.get('assets/json/demo.json').success(function(res){
-            //     $http.get('assets/json/demo_plants.json').success(function(res1){
-            //         console.log(res1)
-            //         // console.log(res1)
-            //         res.plant = res1.plant;
-            //         res.plant_derivative = res1.plant_derivative;
-            //         // console.log(JSON.stringify(res));
-            //         cb(JSON.stringify(res));
-            //     });
-            // });
-        };
+        function signUp(req, f, s){
+            console.log(req);
+            return $http({
+                method: 'POST',
+                url: 'potnetApi/signUp',
+                data: req,
+                datatype: 'json',
+            }).success(function (res) {
+                console.log(res);
+                // if successfully created account,
+                // s(), else, f()
+            })
+        }
+        // function loadLicenses() {
+        //     $http({
+        //         method: 'GET',
+        //         url: 'potnetApi/licenses',
+        //         datatype: 'json',
+        //     }).success(function (res) {
+        //         console.log('Load Licenses!!');
+        //         console.log(res);
+        //     });
+        // }
+        // function getDemoData(cb) {
+        //     console.log('Getting Demo Data');
+        //     // console.log(JSON.stringify(getSyncCheckRequest()));
+        //     // $http.get('assets/json/demo.json').success(function(res){
+        //     //     $http.get('assets/json/demo_plants.json').success(function(res1){
+        //     //         console.log(res1)
+        //     //         // console.log(res1)
+        //     //         res.plant = res1.plant;
+        //     //         res.plant_derivative = res1.plant_derivative;
+        //     //         // console.log(JSON.stringify(res));
+        //     //         cb(JSON.stringify(res));
+        //     //     });
+        //     // });
+        // };
         function fail (res) {
             console.log("+ " + res.error);
             alert = $mdDialog.alert({
@@ -171,11 +201,13 @@
         return {
             fail: fail,
             // potnetpost: potnetpost,
-            loadLicenses: loadLicenses,
+            // loadLicenses: loadLicenses,
             updateBrsPos: updateBrsPos,
             getFromBrsPos: getFromBrsPos,
-            getDemoData: getDemoData,
+            // getDemoData: getDemoData,
             post: post,
+            signIn: signIn,
+            signUp: signUp,
             // saveForDemo: saveForDemo
         }
     }

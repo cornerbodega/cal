@@ -94,7 +94,7 @@ function DynamicStaticDataService(ConnectService, ResponseFormatter, $q, Data) {
     function refresh(tablestosync) {
         // tables_to_sync = tablestosync
         // console.log(Data.tablesum);
-        ConnectService.loadLicenses()
+        // ConnectService.loadLicenses()
         sync_check_request.data = []
         tables_to_sync.map( function( table ) {
             if (!Data.tablesum[table]){ var mysum = 0 }

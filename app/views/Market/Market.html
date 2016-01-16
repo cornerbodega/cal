@@ -1,34 +1,49 @@
-<div layout="col">
+<div layout="col" ng-cloak  >
     <div><my-menu-bar /></div>
     <div class="md-padding">
-        <a ng-show="!vm.showNewPost" ng-click="vm.showNewPost=!vm.showNewPost">New Post</a>
-        <!-- {{vm.formmodel}} -->
-        <div ng-show="vm.showNewPost">
-            <form ng-submit="vm.onsubmit($event)" name="vm.inputform" novalidate>
-                <formly-form model="vm.formmodel" fields="vm.formfields" options="vm.formoptions" form="vm.inputform">
-                    <div layout="row" >
-                        <div flex="50"><button  type="submit" class="btn btn-primary submit-button" ng-disabled="vm.inputform.$invalid">Go</button></div>
-                        <div flex="50"><a ng-click="vm.showNewPost=!vm.showNewPost">Cancel</a></div>
-                    </div>
-                </formly-form>
-            </form>
-        </div>
+        <md-content class="md-padding">
+   <md-tabs md-selected="data.selectedIndex" md-align-tabs="top">
+     <md-tab id="tab1">
+       <md-tab-label>Browse</md-tab-label>
+       <md-tab-body>
+         View for Item #1 <br/>
+         data.selectedIndex = 0;
+       </md-tab-body>
+     </md-tab>
+     <md-tab id="tab2">
+       <md-tab-label>Bids</md-tab-label>
+       <md-tab-body>
+         View for Item #2 <br/>
+         data.selectedIndex = 1;
+       </md-tab-body>
+     </md-tab>
+     <md-tab id="tab3">
+       <md-tab-label>Auctions</md-tab-label>
+       <md-tab-body>
+        New Auctions and Existing Aucitons
+        New:
+            Item
+            Starting Price
+            Buyout Price
+            Duration
 
-        <md-input-container>
-            <label><i class="fa fa-search"></i> Search</label>
-            <input aria-label="search" ng-model="search">
-        </md-input-container>
-        <div ng-repeat="post in vm.market_posts| filter:search| orderBy:'-time'">
-            {{post.image}}
-            {{post.time}}
-            {{post.status}}
-            {{post.price}}
-            {{post.description}}
-            {{post.owner}}
-            {{post.company}}
-            {{post.phone}}
-            {{post.email}}
-        </div>
-
-    </div>
+        Existing:
+            Name (picture)
+            Time Left
+            Highest Bidder
+            Current Bid (Starting Price/Buyout Price)
+            #Items
+       </md-tab-body>
+     </md-tab>
+   </md-tabs>
+ </md-content>
+ <!-- <div class="md-padding" layout="row" layout-sm="column" layout-align="left center"
+      style="padding-top: 0;">
+   <md-checkbox ng-model="data.secondLocked" aria-label="Disable item two?" style="margin: 5px;">
+     Disable item two?
+   </md-checkbox>
+   <md-checkbox ng-model="data.bottom" aria-label="Align tabs to bottom?" style="margin: 5px;">
+     Align tabs to bottom?
+   </md-checkbox> -->
+ </div>
 </div>

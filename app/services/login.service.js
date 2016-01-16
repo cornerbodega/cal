@@ -42,7 +42,8 @@ function LoginService($location, ConnectService, $mdDialog, $rootScope, DynamicS
         console.log(sessionStorage);
         // REFRESHALL!!
         // DynamicStaticDataService.refreshall()
-        $location.path('/traceability')
+        // $location.path('/traceability')
+        $location.path('/market')
     }
 
     function f (res) {

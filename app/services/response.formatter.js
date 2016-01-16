@@ -350,7 +350,7 @@ function ResponseFormatter($rootScope, ConnectService, VendorsCoords, LicenseeIn
 
             vendors.vendorsarray.push(vendor)
             vendors.vendorsbyubi[vendor.ubi] = vendor
-
+            // if (!!vendor.phone) console.log(vendor.name + '|||'+vendor.phone + '|||'+vendor.type);
 
         });
         if (!Data.demo) Data.mylocation = vendors.vendorsbyubi[JSON.parse(sessionStorage.user).ubi].location;

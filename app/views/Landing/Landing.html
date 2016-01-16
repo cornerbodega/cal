@@ -1,4 +1,4 @@
-<div layout="col">
+<div layout="col" ng-cloak>
     <div><my-menu-bar /></div>
     <div class="md-padding">
         <!-- <div>
@@ -23,7 +23,60 @@
         <div class="md-padding">
             <pre>Please sign in with WSLCB-supplied Traceability credentials</pre>
         </div> -->
-        <div>
+
+
+
+
+
+
+
+        <!-- <md-content class="md-padding"> -->
+        <!-- <md-toolbar class="z-depth-2" > -->
+            <!-- <div class="md-toolbar-tools"> -->
+
+    <md-tabs md-selected="data.selectedIndex" md-dynamic-height md-border-bottom md-align-tabs="top">
+     <md-tab id="tab1">
+       <md-tab-label>Sign In</md-tab-label>
+       <md-tab-body >
+           <div class="md-padding">
+               <md-input-container>
+                   <label>Username</label>
+                   <input ng-model="vm.username">
+               </md-input-container>
+               <md-input-container>
+                   <label>Password</label>
+                   <input ng-model="vm.password">
+               </md-input-container>
+               <md-button ng-click="vm.signIn()" class="md-raised md-primary">Submit</md-button>
+           </div>
+       </md-tab-body>
+     </md-tab>
+     <md-tab id="tab2">
+       <md-tab-label>Sign Up</md-tab-label>
+       <md-tab-body>
+           <div class="md-padding">
+               <md-input-container>
+                   <label>Username</label>
+                   <input ng-model="vm.username">
+               </md-input-container>
+               <md-input-container>
+                   <label>Password</label>
+                   <input ng-model="vm.password">
+               </md-input-container>
+               <md-input-container>
+                   <label>UBI</label>
+                   <input ng-model="vm.ubi">
+               </md-input-container>
+               <md-button ng-click="vm.signUp()" class="md-raised md-primary">Submit</md-button>
+
+           </div>
+       </md-tab-body>
+     </md-tab>
+    </md-tabs>
+    <!-- </md-content> -->
+<!-- </md-toolbar> -->
+
+        <!-- <div>
             <form ng-submit="vm.onsubmit($event)" name="vm.inputform" novalidate>
                 <formly-form model="vm.formmodel" fields="vm.formfields" options="vm.formoptions" form="vm.inputform">
                     <div ng-if="!vm.show_view_inventory || !vm.show_batch_adjust">
@@ -31,6 +84,6 @@
                     </div>
                 </formly-form>
             </form>
-        </div>
+        </div> -->
     </div>
 </div>
