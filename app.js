@@ -2,13 +2,16 @@ var express = require("express");
 var bodyParser = require('body-parser');
 var app = express();
 var request = require('request');
-var cheerio = require('cheerio')
+var cheerio = require('cheerio');
+
 app.use(express.logger());
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-
+var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/:');
+console.log(mongoose.db);
 
 // Configuration
 
