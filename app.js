@@ -3,15 +3,22 @@ var bodyParser = require('body-parser');
 var app = express();
 var request = require('request');
 var cheerio = require('cheerio');
+var mongoose = require('mongoose');
 
 app.use(express.logger());
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/:');
-console.log(mongoose.db);
+
+var db = mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log('were connected!');
+});
 
 // Configuration
 
